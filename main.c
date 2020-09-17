@@ -8,26 +8,28 @@
 #include <stdio.h>
 #include <readline/readline.h>
 #include <stdlib.h>
-
 int sum_n(int n){
-  if (n==0){
-    return 0;
+  if (n != 0)
+  {
+    return (sum_n(n-1) + n);
   }
   else{
-    return(n+sum_n(n-1));
+    return 0;
   }
 }
 void print_n(const char *s, int n){
-  if (n==0){
+  if (n != 0)
+  {
     printf("%s\n",s);
     return print_n(s,n-1);
   }
-  else {
-
+  else 
+  {
   }
 }
 
 int main(void) {
+
   char* temp = readline("Enter an int: ");
   int n = atof(temp);
 
